@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="src\Core\Cache.cs" />
+    <Compile Include="src\Core\Events.cs" />
+    <Compile Include="src\Core\References.cs" />
+    <Compile Include="src\View\CustomControl\ExpansionBar.xaml.cs">
+      <DependentUpon>ExpansionBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\CustomControl\ExpansionButton.xaml.cs">
+      <DependentUpon>ExpansionButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\StyleData.cs" />
+    <Compile Include="src\View\UIInteraction.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +80,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="src\View\CustomControl\ExpansionBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\View\CustomControl\ExpansionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +114,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AppIcons\Exit_Icon.png" />
+    <Resource Include="Resources\AppIcons\Maximize_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WowIcons\W.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExpansionIcons\bfa.png" />
+    <Resource Include="Resources\ExpansionIcons\cataclysm.png" />
+    <Resource Include="Resources\ExpansionIcons\legion.png" />
+    <Resource Include="Resources\ExpansionIcons\mop.png" />
+    <Resource Include="Resources\ExpansionIcons\tbc.png" />
+    <Resource Include="Resources\ExpansionIcons\vanilla.png" />
+    <Resource Include="Resources\ExpansionIcons\wod.png" />
+    <Resource Include="Resources\ExpansionIcons\wotlk.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

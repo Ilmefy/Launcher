@@ -1,12 +1,35 @@
-﻿<Window x:Class="Launcher.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Launcher"
+        xmlns:CustomControl="clr-namespace:Launcher.src.View.CustomControl" x:Class="Launcher.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" SizeChanged="Window_SizeChanged">
+    <StackPanel>
+        <Grid Height="40"   Background="#FF51D185" x:Name="TopBar">
+            <StackPanel Background="{Binding ElementName=TopBar}" x:Name="NavigationBar" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Content="Main Window" Foreground="White" FontFamily="Segoe UI Light" Background="{Binding Background, ElementName=NavigationBar, Mode=OneWay}" FontSize="24" Tag="0" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave"/>
+                <Label Content="Addons" Foreground="White" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave" Background="{Binding Background, ElementName=NavigationBar, Mode=OneWay}" FontFamily="Segoe UI Light" FontSize="24" Tag="1" />
+                <Label Content="Sessions" Foreground="White" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave" Background="{Binding Background, ElementName=NavigationBar}" FontFamily="Segoe UI Light" Tag="2" FontSize="24"/>
+                <Label Content="Database" Foreground="White" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave" Background="{Binding Background, ElementName=NavigationBar}" FontFamily="Segoe UI Light" Tag="3" FontSize="24"/>
+                <Label Content="Settings" Foreground="White" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave" Background="{Binding Background, ElementName=NavigationBar}" FontFamily="Segoe UI Light" Tag="4" FontSize="24"/>
+            </StackPanel>
+            <StackPanel Background="{Binding ElementName=TopBar}" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Grid x:Name="Grid_Maximize_App" MouseDown="Grid_Maximize_App_MouseDown" MouseEnter="Grid_Maximize_App_MouseEnter" MouseLeave="Grid_Maximize_App_MouseLeave">
+                    <Image Height="40" Width="40" x:Name="Button_Maximize_App" Source="/Resources/AppIcons/Maximize_Icon.png"/>
+                </Grid>
+                <Grid x:Name="Grid_Exit_App" MouseLeave="Grid_Exit_App_MouseLeave">
+                    <Image Height="40" Width="40" x:Name="Button_Exit_App" Source="/Resources/AppIcons/Exit_Icon.png" MouseLeftButtonDown="Button_Exit_App_MouseLeftButtonDown" MouseEnter="Button_Exit_App_MouseEnter" />
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+        <StackPanel Name="StackPanel">
+            <Grid Width="125" HorizontalAlignment="Left">
+                <CustomControl:ExpansionBar x:Name="ExpansionBar"/>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
 </Window>

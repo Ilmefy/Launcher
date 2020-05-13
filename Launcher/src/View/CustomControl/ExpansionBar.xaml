@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Launcher.src.View.CustomControl.ExpansionBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Launcher.src.View.CustomControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="100">
+    <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Hidden" ScrollChanged="Container_ScrollChanged" >
+        <StackPanel Name="StackPanel">
+            <local:ExpansionButton  x:Name="VanillaButton" Expansion="Vanilla"/>
+            <local:ExpansionButton  Expansion="TheBurningCrusade"/>
+            <local:ExpansionButton  Expansion="WrathOfTheLichKing"/>
+            <local:ExpansionButton  Expansion="Cataclysm"/>
+            <local:ExpansionButton  Expansion="MistsOfPandaria"/>
+            <local:ExpansionButton  Expansion="WarlordsOfDraenor"/>
+            <local:ExpansionButton  Expansion="Legion"/>
+            <local:ExpansionButton  Expansion="BattleForAzeroth"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

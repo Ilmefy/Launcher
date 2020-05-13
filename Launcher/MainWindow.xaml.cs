@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Launcher.src.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,65 @@ namespace Launcher
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance;
         public MainWindow()
         {
             InitializeComponent();
+            Instance = this;
+        }
+
+        private void Top_Bar_Label_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
+            SolidColorBrush solidColorBrush = (SolidColorBrush)TopBar.Background;
+            System.Drawing.Color c = System.Windows.Forms.ControlPaint.Light(System.Drawing.Color.FromArgb(solidColorBrush.Color.A, solidColorBrush.Color.R, solidColorBrush.Color.G, solidColorBrush.Color.B));
+            (sender as Label).Background = new SolidColorBrush(Color.FromArgb(c.A, c.R, c.G, c.B));
+        }
+
+        private void Top_Bar_Label_MouseLeave(object sender, MouseEventArgs e)
+        {
+            (sender as Label).Background = TopBar.Background;
+        }
+
+        private void Button_Exit_App_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Exit_App_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Grid_Exit_App.Background = new SolidColorBrush(Colors.Red);
+        }
+
+        private void Grid_Exit_App_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid_Exit_App.Background = new SolidColorBrush(Colors.Transparent);
+        }
+
+        private void Grid_Maximize_App_MouseEnter(object sender, MouseEventArgs e)
+        {
+            SolidColorBrush solidColorBrush = (SolidColorBrush)TopBar.Background;
+            System.Drawing.Color c = System.Windows.Forms.ControlPaint.Light(System.Drawing.Color.FromArgb(solidColorBrush.Color.A, solidColorBrush.Color.R, solidColorBrush.Color.G, solidColorBrush.Color.B));
+            Grid_Maximize_App.Background = new SolidColorBrush(Color.FromArgb(c.A, c.R, c.G, c.B));
+        }
+
+        private void Grid_Maximize_App_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid_Maximize_App.Background = new SolidColorBrush(Colors.Transparent);
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double Height= this.ActualHeight - TopBar.ActualHeight;
+            ExpansionBar.Height = Height;
+        }
+
+        private void Grid_Maximize_App_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            else if (this.WindowState == WindowState.Normal)
+                this.WindowState = WindowState.Maximized;
         }
     }
 }
