@@ -9,7 +9,7 @@
         Title="MainWindow" Height="450" Width="800" WindowStyle="None" SizeChanged="Window_SizeChanged">
     <StackPanel>
         <Grid Height="40"   Background="#FF51D185" x:Name="TopBar">
-            <StackPanel Background="{Binding ElementName=TopBar}" x:Name="NavigationBar" Orientation="Horizontal" HorizontalAlignment="Left">
+            <StackPanel Background="{Binding Background, ElementName=TopBar}" x:Name="NavigationBar" Orientation="Horizontal" HorizontalAlignment="Left">
                 <Label Content="Main Window" Foreground="White" FontFamily="Segoe UI Light" Background="{Binding Background, ElementName=NavigationBar, Mode=OneWay}" FontSize="24" Tag="0" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave"/>
                 <Label Content="Addons" Foreground="White" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave" Background="{Binding Background, ElementName=NavigationBar, Mode=OneWay}" FontFamily="Segoe UI Light" FontSize="24" Tag="1" />
                 <Label Content="Sessions" Foreground="White" MouseEnter="Top_Bar_Label_MouseEnter" MouseLeave="Top_Bar_Label_MouseLeave" Background="{Binding Background, ElementName=NavigationBar}" FontFamily="Segoe UI Light" Tag="2" FontSize="24"/>
@@ -26,9 +26,12 @@
 
             </StackPanel>
         </Grid>
-        <StackPanel Name="StackPanel">
-            <Grid Width="125" HorizontalAlignment="Left">
-                <CustomControl:ExpansionBar x:Name="ExpansionBar"/>
+        <StackPanel  Name="StackPanel" Orientation="Horizontal">
+            <Grid Width="120" HorizontalAlignment="Left">
+                <CustomControl:ExpansionBar Panel.ZIndex="1" x:Name="ExpansionBar"/>
+            </Grid>
+            <Grid Margin="-20,0,0,0" >
+                <CustomControl:MainPage x:Name="MainPage"/>
             </Grid>
         </StackPanel>
     </StackPanel>

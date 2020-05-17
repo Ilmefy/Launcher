@@ -27,29 +27,37 @@ namespace Launcher.src.Core
             switch (References.CurrentlySelectedExpansion) 
             {
                 case References.Expansions.Vanilla:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_VANILLA;
+                    MainWindow.Instance.TopBar.Background = VanillaStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = VanillaStyleData.Background;
                     break;
                 case References.Expansions.TheBurningCrusade:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_THE_BURNING_CRUSADE;
+                    MainWindow.Instance.TopBar.Background = TheBurningCrusadeStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = TheBurningCrusadeStyleData.Background;
                     break;
 
                 case References.Expansions.WrathOfTheLichKing:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_WRATH_OF_THE_LICH_KING;
+                    MainWindow.Instance.TopBar.Background = WrathOfTheLichKingStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = WrathOfTheLichKingStyleData.Background;
                     break;
                 case References.Expansions.Cataclysm:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_CATACLYSM;
+                    MainWindow.Instance.TopBar.Background = CataclysmStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = CataclysmStyleData.Background;
                     break;
                 case References.Expansions.MistsOfPandaria:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_MISTS_OF_PANDARIA;
+                    MainWindow.Instance.TopBar.Background = MistsOfPandariaStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = MistsOfPandariaStyleData.Background;
                     break;
                 case References.Expansions.WarlordsOfDraenor:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_WARLORDS_OF_DRAENOR;
+                    MainWindow.Instance.TopBar.Background = WarlordsOfDraenorStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = WarlordsOfDraenorStyleData.Background;
                     break;
                 case References.Expansions.Legion:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_LEGION;
+                    MainWindow.Instance.TopBar.Background = LegionStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = LegionStyleData.Background;
                     break;
                 case References.Expansions.BattleForAzeroth:
-                    MainWindow.Instance.TopBar.Background = StyleData.TOP_BAR_BACKGROUND_BATTLE_FOR_AZEROTH;
+                    MainWindow.Instance.TopBar.Background = BattleForAzerothStyleData.Coloristic;
+                    MainWindow.Instance.MainPage.Background.Source = BattleForAzerothStyleData.Background;
                     break;
             }
             

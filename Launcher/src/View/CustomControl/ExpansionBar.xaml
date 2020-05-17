@@ -9,13 +9,13 @@
     <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Hidden" ScrollChanged="Container_ScrollChanged" >
         <StackPanel Name="StackPanel">
             <local:ExpansionButton  x:Name="VanillaButton" Expansion="Vanilla"/>
-            <local:ExpansionButton  Expansion="TheBurningCrusade"/>
-            <local:ExpansionButton  Expansion="WrathOfTheLichKing"/>
-            <local:ExpansionButton  Expansion="Cataclysm"/>
-            <local:ExpansionButton  Expansion="MistsOfPandaria"/>
-            <local:ExpansionButton  Expansion="WarlordsOfDraenor"/>
-            <local:ExpansionButton  Expansion="Legion"/>
-            <local:ExpansionButton  Expansion="BattleForAzeroth"/>
+            <local:ExpansionButton  Expansion="TheBurningCrusade" Margin="0,10,0,0"/>
+            <local:ExpansionButton  Expansion="WrathOfTheLichKing" Margin="0,10,0,0"/>
+            <local:ExpansionButton  Expansion="Cataclysm" Margin="0,10,0,0"/>
+            <local:ExpansionButton  Expansion="MistsOfPandaria" Margin="0,10,0,0"/>
+            <local:ExpansionButton  Expansion="WarlordsOfDraenor" Margin="0,10,0,0"/>
+            <local:ExpansionButton  Expansion="Legion" Margin="0,10,0,0"/>
+            <local:ExpansionButton  Expansion="BattleForAzeroth" Margin="0,10,0,0"/>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

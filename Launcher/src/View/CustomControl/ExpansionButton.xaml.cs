@@ -41,7 +41,7 @@ namespace Launcher.src.View.CustomControl
         }
         private void OnActiveChange()
         {
-            if(Active)
+            if (Active)
             {
                 Border.BorderThickness = new Thickness(2);
                 Container.Opacity = 1.0;
@@ -55,9 +55,9 @@ namespace Launcher.src.View.CustomControl
                 Container.Opacity = DefaultOpacity;
                 Triangle.Visibility = Visibility.Hidden;
                 Marker.Opacity = 0.6;
-                Grid_MouseLeave(Container, new MouseEventArgs(Mouse.PrimaryDevice,0));
+                Grid_MouseLeave(Container, new MouseEventArgs(Mouse.PrimaryDevice, 0));
             }
-            
+
         }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
@@ -82,52 +82,52 @@ namespace Launcher.src.View.CustomControl
         }
         private void OnExpansionChange()
         {
-            switch(_expansion)
+            switch (_expansion)
             {
                 case References.Expansions.Vanilla:
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE_ICON_VANILLA;
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_VANILLA;
+                    Icon.Source = VanillaStyleData.EXPANSION_BUTTON_IMAGE_ICON;
+                    Triangle.Fill = VanillaStyleData.Coloristic;
                     break;
                 case References.Expansions.TheBurningCrusade:
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_THE_BURNING_CRUSADE;
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE__THE_BURNING_CRUSADE;
+                    Triangle.Fill = TheBurningCrusadeStyleData.Coloristic;
+                    Icon.Source = TheBurningCrusadeStyleData.EXPANSION_BUTTON_IMAGE_ICON;
                     break;
                 case References.Expansions.WrathOfTheLichKing:
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_WRATH_OF_THE_LICH_KING;
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE_ICON_WRATH_OF_THE_LICH_KING;
+                    Triangle.Fill = WrathOfTheLichKingStyleData.Coloristic;
+                    Icon.Source = WrathOfTheLichKingStyleData.EXPANSION_BUTTON_IMAGE_ICON;
                     break;
                 case References.Expansions.Cataclysm:
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_CATACLYSM;
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE_ICON_CATACLYSM;
+                    Triangle.Fill = CataclysmStyleData.Coloristic;
+                    Icon.Source = CataclysmStyleData.EXPANSION_BUTTON_IMAGE_ICON;
                     break;
                 case References.Expansions.MistsOfPandaria:
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE_ICON_MISTS_OF_PANDARIA;
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_MISTS_OF_PANDARIA;
+                    Triangle.Fill = MistsOfPandariaStyleData.Coloristic;
+                    Icon.Source = MistsOfPandariaStyleData.EXPANSION_BUTTON_IMAGE_ICON;
                     break;
                 case References.Expansions.WarlordsOfDraenor:
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE_ICON_WARLORDS_OF_DRAENOR;
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_WARLORDS_OF_DRAENOR;
+                    Icon.Source = WarlordsOfDraenorStyleData.EXPANSION_BUTTON_IMAGE_ICON;
+                    Triangle.Fill = WarlordsOfDraenorStyleData.Coloristic;
                     break;
                 case References.Expansions.Legion:
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE_ICON_LEGION;
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_LEGION;
+                    Icon.Source = LegionStyleData.EXPANSION_BUTTON_IMAGE_ICON;
+                    Triangle.Fill = LegionStyleData.Coloristic;
                     break;
                 case References.Expansions.BattleForAzeroth:
-                    Icon.Source = StyleData.EXPANSION_BUTTON_IMAGE_ICON_BATTLE_FOR_AZEROTH;
-                    Triangle.Fill = StyleData.TOP_BAR_BACKGROUND_BATTLE_FOR_AZEROTH;
+                    Icon.Source = BattleForAzerothStyleData.EXPANSION_BUTTON_IMAGE_ICON;
+                    Triangle.Fill = BattleForAzerothStyleData.Coloristic;
                     break;
-                
 
-                
+
+
             }
         }
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
-            
+
             DoubleAnimation opacityAnimation = new DoubleAnimation();
             opacityAnimation.From = (sender as Grid).Opacity;
-            if(Active)
+            if (Active)
                 opacityAnimation.To = ActiveOpacity;
             else
                 opacityAnimation.To = DefaultOpacity;

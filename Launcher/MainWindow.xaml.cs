@@ -38,10 +38,18 @@ namespace Launcher
 
         private void Top_Bar_Label_MouseLeave(object sender, MouseEventArgs e)
         {
-            (sender as Label).Background = TopBar.Background;
+            //(sender as Label).Background = TopBar.Background;
+
+            BindingOperations.SetBinding((sender as Label), BackgroundProperty, new Binding("Background") { Source = TopBar });
+
+            //Binding binding = new Binding();
+            //binding.Source = (sender as Label);
+            //binding.ElementName = "TopBar";
+            //(sender as Label).SetBinding(BackgroundProperty, binding);
         }
 
         private void Button_Exit_App_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+
         {
             Application.Current.Shutdown();
         }
@@ -71,7 +79,11 @@ namespace Launcher
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             double Height= this.ActualHeight - TopBar.ActualHeight;
+            double Width = this.ActualWidth - ExpansionBar.ActualWidth;
             ExpansionBar.Height = Height;
+            StackPanel.Height = Height;
+            MainPage.Height = Height;
+            MainPage.Width = Width;
         }
 
         private void Grid_Maximize_App_MouseDown(object sender, MouseButtonEventArgs e)
